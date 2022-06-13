@@ -43,7 +43,7 @@ router.delete('/:id', async (req, res) => {
     }
 
     for(let i=1; i < menuList[0].menu.length; i++) {
-
+        // issue: productID !== i while remove
         if (productId == menuList[0].menu[i].id) {
 
             await deleteProduct(productId);
