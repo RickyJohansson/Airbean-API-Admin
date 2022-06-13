@@ -13,4 +13,14 @@ async function getMenu() {
     }
 }
 
-module.exports = { getMenu }
+async function addProduct(newProduct) {
+    const result = await database.update({}, { $push: { menu: newProduct } });
+    return result;
+}
+
+async function deleteProduct(productId) {
+    const menuList = await database.update({}, { $pull: { menu: { id: Number(productId) } } });
+    return menuList;
+}
+
+module.exports = { getMenu, addProduct, deleteProduct }
