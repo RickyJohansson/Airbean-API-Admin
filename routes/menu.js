@@ -3,6 +3,16 @@ const { Router } = require('express');
 
 const router = Router();
 
+const apiKeys = [
+    '9234032895hf7347hf444',
+    '7465845hyv23834bt85g',
+    'ah4uh45j4jjjj4444',
+    'lo43k454bfnb43gj4g',
+    '8880888088888088880',
+    '8j7h6g5f4d3s2a1',
+    '0m9n8b7v6c5x4z32'
+];
+
 router.get('/', async (req, res) => {
     const menuList = await getMenu();
 
@@ -26,7 +36,7 @@ router.post('/addproduct', async (req, res) => {
 
     const resObj = {
         success: true,
-        menu: menuList
+        addedItems: menuList
     }
 
     res.json(resObj);
@@ -43,7 +53,7 @@ router.delete('/:id', async (req, res) => {
     }
 
     for(let i=1; i < menuList[0].menu.length; i++) {
-        // issue: productID !== i while remove
+
         if (productId == menuList[0].menu[i].id) {
 
             await deleteProduct(productId);
@@ -51,14 +61,6 @@ router.delete('/:id', async (req, res) => {
             resObj.success = true;
             resObj.removedItem = menuList[0].menu[i];
 
-            // We want to reset the ids in the menu accordingly
-            menuList[0].menu.map((res, index) => {
-                res.id = index;
-            });
-
-        } else {
-
-            resObj.message = 'error'
         }
     }
 
