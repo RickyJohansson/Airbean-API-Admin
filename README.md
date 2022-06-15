@@ -20,6 +20,7 @@ localhost:8000/api/order
 Body:
 json
 
+```
 {"cart": [
     {"id": "2",
     "title": "Caffè Doppio",
@@ -31,6 +32,7 @@ json
   "price": 49,
   "amount": 2}
 ]}
+```
 Header:
 username | William2
 Content-Type | application/json
@@ -55,10 +57,11 @@ localhost:8000/api/account/login
 
 Body:
 json
-
+```
 {
   "username":"William2",
   "password":"pw65123"
 }
+```
 Header:
 no header
