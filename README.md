@@ -1,5 +1,10 @@
 # Airbean-API-Admin
 
+
+
+
+# Old routes from group-assignment:
+
 localhost:8000/api/account/signup
 
 Body:
@@ -14,6 +19,8 @@ json
 ```
 Header:
 Content-Type | application/json
+
+
 
 localhost:8000/api/order
 
@@ -37,6 +44,8 @@ Header:
 username | William2
 Content-Type | application/json
 
+
+
 localhost:8000/api/account/orderhistory
 
 Body:
@@ -52,6 +61,8 @@ no body
 
 Header:
 no header
+
+
 
 localhost:8000/api/account/login
 
