@@ -1,7 +1,44 @@
 # Airbean-API-Admin
 
+### New routes for assignment:
 
+(Retrieve an API-Key):
 
+http://localhost:8000/api/key
+body: none
+header: none
+
+------------------------------------------------
+
+(add products to menu):
+
+http://localhost:8000/api/menu/addproduct
+
+body:
+```
+{
+	"title": "jjjjjj",
+	"id": 11,
+	"desc": "stuff",
+	"price": 40
+}
+```
+header:
+ex: api-key | mdfgn71203123
+    Content-Type | application/json
+    
+-----------------------------------------------------
+
+(delete products from menu):
+
+ex: http://localhost:8000/api/menu/6       (/:id)
+
+body: none
+header:
+Content-Type | multipart/form-data
+ex: api-key | 9595959595959
+
+---------------------------------------------------------
 
 ### Old routes from group-assignment:
 
