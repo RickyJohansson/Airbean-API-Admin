@@ -6,14 +6,29 @@ const { auth } = require('../middleware/auth');
 const router = Router();
 
 router.post('/addproduct', auth, async (req, res) => {
-    const menuList = await addProduct(req.body);
 
-    const resObj = {
-        success: true,
-        addedItems: menuList
+    const product = req.body;
+
+    if (product.hasOwnProperty('id') && product.hasOwnProperty('title')
+    && product.hasOwnProperty('desc') && product.hasOwnProperty('price')) {
+
+        await addProduct(req.body);
+
+        const resObj = {
+            success: true,
+            addedProduct: product
+        }
+        res.json(resObj);
+
+    } else {
+
+        const resObj = {
+            success: false,
+            message: 'please include seperate id, title, desc and price to body'
+        }
+        
+        res.json(resObj);
     }
-
-    res.json(resObj);
 });
 
 router.delete('/:id', auth, async (req, res) => {
@@ -23,10 +38,11 @@ router.delete('/:id', auth, async (req, res) => {
     console.log(menuList[0].menu);
 
     const resObj = {
-        success: false
+        success: false,
+        removedItem: 'error: wrong id'
     }
 
-    for(let i=1; i < menuList[0].menu.length; i++) {
+    for(let i=0; i < menuList[0].menu.length; i++) {
 
         if (productId == menuList[0].menu[i].id) {
 
