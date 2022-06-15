@@ -5,7 +5,9 @@
 (Retrieve an API-Key):
 
 http://localhost:8000/api/key
+
 body: none
+
 header: none
 
 ------------------------------------------------
@@ -23,7 +25,9 @@ body:
 	"price": 40
 }
 ```
+
 header:
+
 ex: api-key | mdfgn71203123
     Content-Type | application/json
     
@@ -31,12 +35,17 @@ ex: api-key | mdfgn71203123
 
 (delete products from menu):
 
-ex: http://localhost:8000/api/menu/6       (/:id)
+ex: http://localhost:8000/api/menu/6       
+(/:id)
 
 body: none
+
 header:
+
 Content-Type | multipart/form-data
+
 ex: api-key | 9595959595959
+
 
 ---------------------------------------------------------
 
