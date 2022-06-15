@@ -5,11 +5,13 @@ localhost:8000/api/account/signup
 Body:
 json
 
+```
 {
     "username":"William2",
     "email":"william@hotmaail.se",
     "password":"pw65123"
 }
+```
 Header:
 Content-Type | application/json
 
