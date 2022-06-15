@@ -21,7 +21,7 @@ Header:
 Content-Type | application/json
 
 
-
+------------------------------------------
 localhost:8000/api/order
 
 Body:
@@ -45,7 +45,7 @@ username | William2
 Content-Type | application/json
 
 
-
+-----------------------------------------------
 localhost:8000/api/account/orderhistory
 
 Body:
@@ -63,7 +63,7 @@ Header:
 no header
 
 
-
+--------------------------------------------
 localhost:8000/api/account/login
 
 Body:
